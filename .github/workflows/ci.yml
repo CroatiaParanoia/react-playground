@@ -18,6 +18,7 @@ jobs:
 
       - name: Build
         run: |
+          npm rebuild node-sass
           npm run build
 
       - name: Deploy to GitHub Pages
