@@ -6,36 +6,34 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
+    "antd": "^4.0.3",
+    "babel-plugin-import": "^1.13.0",
+    "customize-cra": "^0.9.1",
     "react": "^16.13.1",
+    "react-app-rewired": "^2.1.5",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "lint": "react-scripts lint",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "lint": "eslint src/ --ext .ts,.tsx",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test ",
+    "eject": "react-app-rewired eject"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run lint && npm run test -- --watchAll=false && npm run build",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
     "src/*.{ts,tsx}": [
-      "node_modules/.bin/prettier --write",
-      "node_modules/.bin/eslint --fix",
-      "git add"
+      "npx prettier --write",
+      "npx eslint --fix"
     ],
     "src/*.{css,scss,json,html,md}": [
-      "node_modules/.bin/prettier --write",
-      "git add"
+      "npx prettier --write"
     ]
   },
   "eslintConfig": {
@@ -54,6 +52,12 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "@typescript-eslint/parser": "^2.24.0",
     "eslint": "^6.8.0",
@@ -66,6 +70,8 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1"
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "typescript": "~3.7.2"
   }
 }
