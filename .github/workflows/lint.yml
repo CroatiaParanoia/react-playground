@@ -1,9 +1,0 @@
-name: GitHub Actions Lint and Test
-on: push
-
-jobs:
-  lint-and-test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Lint and Test
-        run: npm install && npm run-script lint && npm run-script test
