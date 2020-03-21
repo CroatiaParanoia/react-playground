@@ -1,19 +1,9 @@
 name: GitHub Actions Lint and Test
-on:
-  push:
-    branches:
-      - master
+on: push
+
 jobs:
-  build-and-deploy:
+  lint-and-test:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
-
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: npm install && npm run lint && npm run test
+      - name: Lint and Test
+        run: npm install && npm run-script lint && npm run-script test
