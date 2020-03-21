@@ -7,9 +7,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: Lint
+      - name: Install
         run: |
           npm install
+
+      - name: Lint
+        run: |
           npm run lint
 
       - name: Test
@@ -27,3 +30,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
           FOLDER: build
+          BUILD_SCRIPT: npm install && npm rebuild node-sass  && npm run build
