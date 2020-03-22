@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
-import Router from './router';
+import { Button } from 'antd';
 
 function App() {
   return (
-    <div className="app">
-      <Router />
+    <div>
+      <Button type="danger">去TodoList</Button>
     </div>
   );
 }

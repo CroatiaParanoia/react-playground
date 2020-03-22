@@ -1,15 +1,26 @@
 const { override, fixBabelImports, addWebpackAlias } = require('customize-cra');
 const path = require('path');
+const fs = require('fs');
+
+const basePath = process.env.NODE_ENV === 'production' ? './' : '/react-playground/';
 
 const setWebpackPublicPath = publicPath => config => {
-  // eslint-disable-next-line no-param-reassign
-  config.output.publicPath = publicPath;
+  fs.writeFile('./config.json', JSON.stringify(config.devServer, null, 3), err => {
+    if (!err) {
+      console.log('输出');
+    }
+  });
+
+  if (publicPath) {
+    // eslint-disable-next-line no-param-reassign
+    config.output.publicPath = publicPath;
+  }
   return config;
 };
 
 module.exports = override(
   addWebpackAlias({
-    '@': path.resolve(__dirname, './src'),
+    '@src': path.resolve(__dirname, './src'),
     '@utils': path.resolve(__dirname, './src/utils'),
   }),
   fixBabelImports('import', {
@@ -17,5 +28,5 @@ module.exports = override(
     libraryDirectory: 'es',
     style: 'css',
   }),
-  setWebpackPublicPath('./'),
+  setWebpackPublicPath(basePath),
 );
