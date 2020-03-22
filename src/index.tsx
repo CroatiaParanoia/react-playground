@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import startMock from './mock';
+import './utils/request';
+
+if (process.env.NODE_ENV === 'development') {
+  startMock();
+}
 
 ReactDOM.render(
   <React.StrictMode>
