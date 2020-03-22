@@ -6,9 +6,9 @@ import Router from './router';
 import * as serviceWorker from './serviceWorker';
 import startMock from './mock';
 
-if (process.env.NODE_ENV === 'development') {
-  startMock();
-}
+// if (process.env.NODE_ENV === 'development') {
+startMock();
+// }
 
 ReactDOM.render(
   <React.StrictMode>

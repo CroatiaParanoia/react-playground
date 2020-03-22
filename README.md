@@ -5,27 +5,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `yarn start`
+启动web服务监听内存资源
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### `yarn lint`
+ts, tsx 风格检查
 
 ### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+jest 单元测试
 
 ### `yarn build`
+打包
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `yarn serve`
+打包并开启web服务监听硬盘资源
 
 ### `yarn eject`
 
@@ -42,3 +34,15 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## dependencies
+- antd - 蚂蚁金服UI框架
+- typescript - js超集
+- jest - 单元测试框架
+- ramda - 函数式编程
+- rxjs - 响应式编程
+- mockjs - 数据模拟
+- axios - 请求
+- immer - 不可变数据结构
+- react-router - 路由
+- husky（git hooks: pre-commit） - commit 前对暂存区的代码风格检查，及 test
