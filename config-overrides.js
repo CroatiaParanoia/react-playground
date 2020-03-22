@@ -1,7 +1,11 @@
-const {
-  override, fixBabelImports, addWebpackAlias, setWebpackPublicPath,
-} = require('customize-cra');
+const { override, fixBabelImports, addWebpackAlias } = require('customize-cra');
 const path = require('path');
+
+const setWebpackPublicPath = publicPath => config => {
+  // eslint-disable-next-line no-param-reassign
+  config.output.publicPath = publicPath;
+  return config;
+};
 
 module.exports = override(
   addWebpackAlias({
