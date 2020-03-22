@@ -30,7 +30,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "lint": "eslint src/ --ext .ts,.tsx",
-    "build": "react-app-rewired build",
+    "build": "PUBLIC_URL=./ react-app-rewired build",
     "test": "react-app-rewired test ",
     "eject": "react-app-rewired eject",
     "serve": "npm run build && serve build"
