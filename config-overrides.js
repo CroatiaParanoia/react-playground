@@ -5,12 +5,6 @@ const fs = require('fs');
 const basePath = process.env.NODE_ENV === 'production' ? './' : '/react-playground/';
 
 const setWebpackPublicPath = publicPath => config => {
-  fs.writeFile('./config.json', JSON.stringify(config.devServer, null, 3), err => {
-    if (!err) {
-      console.log('输出');
-    }
-  });
-
   if (publicPath) {
     // eslint-disable-next-line no-param-reassign
     config.output.publicPath = publicPath;
