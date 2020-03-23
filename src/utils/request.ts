@@ -1,4 +1,4 @@
-import axios, { AxiosStatic, AxiosResponse } from 'axios';
+import axios, { AxiosStatic } from 'axios';
 import { Modal } from 'antd';
 
 function errorModal(title: string) {
@@ -29,7 +29,7 @@ axios.interceptors.response.use(
       errorModal('没有权限');
       throw new Error('没有权限');
     }
-    return res.data;
+    return res;
   },
   error => {
     errorModal('请求失败，请稍后重试！');
@@ -37,6 +37,6 @@ axios.interceptors.response.use(
   },
 );
 
-const request = <T>(...arg: Parameters<AxiosStatic>) => axios(...arg).then(res => res as AxiosResponse<T>);
+const request = <T>(...arg: Parameters<AxiosStatic>) => axios(...arg).then(res => res.data as Promise<ResponseBody<T>>);
 
 export default request;

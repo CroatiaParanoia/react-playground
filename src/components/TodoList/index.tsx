@@ -1,24 +1,39 @@
 import React from 'react';
-import request from '@utils/request';
+import { Checkbox, Button, List } from 'antd';
 
 type ListItem = { value: string; id: string; isFinish: boolean };
 
-const TodoList: React.FC<{}> = () => {
-  const [list, setList] = React.useState<ListItem[]>([]);
+const TodoItem: React.FC<ListItem & {
+  onDelete?: (id: string) => void;
+  onChange?: (id: string) => void;
+  checked?: boolean;
+}> = ({
+  value, isFinish, id, checked, onDelete, onChange,
+}) => (
+  <div className="w100-percent df ac jsb pl12 pr12" style={{ height: 40 }}>
+    <Checkbox checked={checked} onChange={() => onChange?.(id)}>
+      <span style={{ textDecoration: isFinish ? 'line-through' : '' }}>{value}</span>
+    </Checkbox>
 
-  React.useEffect(() => {
-    request<ListItem[]>('/api/list').then(res => {
-      console.log(res, 'res');
-      setList(res.data || []);
-    });
-  }, [setList]);
+    <Button type="danger" onClick={() => onDelete?.(id)}>
+      删除
+    </Button>
+  </div>
+);
 
-  console.log(list, 'list');
-  return (
-    <div>
-      {list.map(item => <div key={item.id}>{item.value}</div>)}
-    </div>
-  );
-};
+const TodoList: React.FC<{ dataSource: ListItem[] }> = ({ dataSource }) => (
+  <div>
+    <List
+      size="large"
+      header={<div>Header</div>}
+      footer={<div>Footer</div>}
+      bordered
+      dataSource={dataSource}
+      renderItem={item => (
+        <TodoItem key={item.id} id={item.id} value={item.value} isFinish={item.isFinish} checked={false} />
+      )}
+    />
+  </div>
+);
 
 export default TodoList;
