@@ -1,5 +1,5 @@
 declare global {
-  type ResponseBody<T> = { code: number; message: string; data: T };
+  interface ResponseBody<T> { code: number; message: string; data: T }
 }
 
 export {};

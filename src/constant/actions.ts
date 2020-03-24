@@ -13,8 +13,10 @@ interface TodoListItem {
   id: string;
 }
 
-export function getTodoList({ keywords = '', pageIndex = 1, pageSize = 10 }: GetTodoListParams) {
-  return request<TodoListItem[]>(apis.getTodoList, { method: 'GET', data: { keywords, pageIndex, pageSize } });
-}
+export const getTodoList = ({ keywords = '', pageIndex = 1, pageSize = 10 }: GetTodoListParams) =>
+  request<TodoListItem[]>(apis.getTodoList, {
+    method: 'GET',
+    data: { keywords, pageIndex, pageSize }
+  });
 
 export const a = {};

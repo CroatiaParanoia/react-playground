@@ -25,10 +25,10 @@
     "./src"
   ],
   "exclude": [
-    "./node_modules",
-    "./public",
-    "./build",
-    "./config-overrides.js"
+    "node_modules",
+    "public",
+    "build",
+    "config-overrides.js"
   ],
   "files": [
     "./src/types/index.d.ts"

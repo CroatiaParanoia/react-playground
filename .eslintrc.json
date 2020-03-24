@@ -4,7 +4,7 @@
     "es6": true,
     "jest": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": ["alloy", "alloy/react", "alloy/typescript", "plugin:react/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -17,15 +17,31 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "root": true,
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "for-direction": "error",
+    "getter-return": ["error", { "allowImplicit": false }],
+    "no-await-in-loop": "off",
+    "no-compare-neg-zero": "error",
+    "no-cond-assign": ["error", "except-parens"],
+    "no-constant-condition": [
+      "error",
+      {
+        "checkLoops": false
+      }
+    ],
+    "no-control-regex": "error",
+    "no-debugger": "error",
+    "no-dupe-args": "error",
+    "no-dupe-keys": "error",
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-    "import/extensions": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-    "no-console": 0,
-    "max-len": ["error", { "code": 120 }],
+    "no-console": "off",
+    "max-len": ["error", { "code": 100 }],
     "arrow-parens": 0,
     "no-unused-vars": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "@typescript-eslint/no-require-imports": 0
   },
   "settings": {
     "import/resolver": {
