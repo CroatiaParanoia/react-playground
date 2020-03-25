@@ -41,7 +41,8 @@
     "arrow-parens": 0,
     "no-unused-vars": 0,
     "react/prop-types": 0,
-    "@typescript-eslint/no-require-imports": 0
+    "@typescript-eslint/no-require-imports": 0,
+    "max-nested-callbacks": "warn"
   },
   "settings": {
     "import/resolver": {

@@ -1,13 +1,15 @@
-const {
-  override,
-  fixBabelImports,
-  addWebpackAlias,
-  setWebpackPublicPath
-} = require('customize-cra');
+const { override, fixBabelImports, addWebpackAlias } = require('customize-cra');
 const path = require('path');
 const fs = require('fs');
 
 const basePath = process.env.NODE_ENV === 'production' ? './' : '';
+
+const setWebpackPublicPath = (path) => (config) => {
+  if (path) {
+    config.output.publicPath = path;
+  }
+  return config;
+};
 
 module.exports = override(
   addWebpackAlias({

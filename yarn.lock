@@ -1616,6 +1616,13 @@
   resolved "http://r.cnpmjs.org/@types/q/download/@types/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha1-aQoUdbhPKohP0HzXl8APXzE1bqg=
 
+"@types/ramda@^0.27.0":
+  version "0.27.0"
+  resolved "http://r.cnpmjs.org/@types/ramda/download/@types/ramda-0.27.0.tgz#e6df564a5f9637c93e708b4fdb948c6a5457ecad"
+  integrity sha1-5t9WSl+WN8k+cItP25SMalRX7K0=
+  dependencies:
+    ts-toolbelt "^6.3.3"
+
 "@types/react-dom@*", "@types/react-dom@^16.9.0":
   version "16.9.5"
   resolved "http://r.cnpmjs.org/@types/react-dom/download/@types/react-dom-16.9.5.tgz#5de610b04a35d07ffd8f44edad93a71032d9aaa7"
@@ -12258,6 +12265,11 @@ ts-pnp@1.1.6, ts-pnp@^1.1.6:
   version "1.1.6"
   resolved "http://r.cnpmjs.org/ts-pnp/download/ts-pnp-1.1.6.tgz#389a24396d425a0d3162e96d2b4638900fdc289a"
   integrity sha1-OJokOW1CWg0xYultK0Y4kA/cKJo=
+
+ts-toolbelt@^6.3.3:
+  version "6.3.6"
+  resolved "http://r.cnpmjs.org/ts-toolbelt/download/ts-toolbelt-6.3.6.tgz#2bde29106c013ed520c32f30e1248daf8fd4f5f9"
+  integrity sha1-K94pEGwBPtUgwy8w4SSNr4/U9fk=
 
 tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.11.1"
