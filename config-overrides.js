@@ -2,12 +2,11 @@ const { override, fixBabelImports, addWebpackAlias } = require('customize-cra');
 const path = require('path');
 const fs = require('fs');
 
-const basePath = process.env.NODE_ENV === 'production' ? './' : '';
-
 const setWebpackPublicPath = (path) => (config) => {
   if (path) {
     config.output.publicPath = path;
   }
+
   return config;
 };
 
@@ -21,5 +20,5 @@ module.exports = override(
     libraryDirectory: 'es',
     style: 'css'
   }),
-  setWebpackPublicPath(basePath)
+  setWebpackPublicPath(process.env.NODE_ENV === 'production' ? './' : '/react-playground/')
 );
