@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.scss';
-import { useHistory } from 'react-router-dom';
 import DynamicForm from '@src/components/DynamicForm';
 
 const defaultSelectedList = [
@@ -22,8 +21,6 @@ const defaultSelectedList = [
 ];
 
 function App() {
-  const history = useHistory();
-
   return (
     <div className="ml12 pl12">
       <DynamicForm dataSource={defaultSelectedList} value={[]} />

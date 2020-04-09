@@ -6,7 +6,7 @@ const NotFoundPage: React.FC<{}> = () => {
   const history = useHistory();
   const toTodolistPage = React.useCallback(() => {
     history.push('/');
-  }, []);
+  }, [history]);
 
   return (
     <div className="not-found-page">
