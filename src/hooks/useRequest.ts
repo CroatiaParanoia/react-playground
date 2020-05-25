@@ -12,7 +12,7 @@ export default function useRequest<R, T>(
       console.log(res);
       setData(res.data);
     });
-  }, [params]);
+  }, [params, requestFn]);
 
   return [data];
 }

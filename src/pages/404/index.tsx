@@ -11,7 +11,7 @@ const NotFoundPage: React.FC<{}> = () => {
   return (
     <div className="not-found-page">
       <div>404 没找到哦</div>
-      <Button type="danger" onClick={toTodolistPage}>
+      <Button type="ghost" onClick={toTodolistPage}>
         去首页
       </Button>
     </div>

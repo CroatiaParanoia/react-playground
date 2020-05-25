@@ -17,7 +17,7 @@ const TodoItem: React.FC<ListItem & {
       <span style={{ textDecoration: isFinish ? 'line-through' : '' }}>{value}</span>
     </Checkbox>
 
-    <Button type="danger" onClick={() => onDelete?.(id)}>
+    <Button type="ghost" onClick={() => onDelete?.(id)}>
       删除
     </Button>
   </div>

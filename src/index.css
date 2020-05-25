@@ -24,6 +24,14 @@ code {
 .ml12 {
   margin-left: 12px;
 }
+.mt12 {
+  margin-top: 12px;
+}
+
+.mb12 {
+  margin-bottom: 12px;
+}
+
 .pl12 {
   padding-left: 12px;
 }
@@ -40,6 +48,13 @@ code {
 
 .df {
   display: flex;
+}
+
+.fdr {
+  flex-direction: row;
+}
+.fdc {
+  flex-direction: column;
 }
 
 .jc {

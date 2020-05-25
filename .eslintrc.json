@@ -18,8 +18,10 @@
     "sourceType": "module"
   },
   "root": true,
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "for-direction": "error",
     "getter-return": ["error", { "allowImplicit": false }],
     "no-await-in-loop": "off",
