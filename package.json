@@ -34,7 +34,7 @@
     "test": "react-app-rewired test ",
     "eject": "react-app-rewired eject",
     "serve": "npm run build && serve build",
-    "deploy": "npm run build && ts-node scripts/deploy.ts"
+    "deploy": "npm run build && node scripts/deploy.js"
   },
   "husky": {
     "hooks": {
@@ -95,7 +95,6 @@
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "serve": "^11.3.0",
-    "ts-node": "^8.10.1",
     "typescript": "3.8.3"
   }
 }
