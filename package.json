@@ -16,7 +16,7 @@
     "axios": "^0.19.2",
     "babel-plugin-import": "^1.13.0",
     "customize-cra": "^0.9.1",
-    "immer": "^6.0.2",
+    "immer": "^8.0.1",
     "mockjs": "^1.1.0",
     "ramda": "^0.27.0",
     "react": "^16.13.1",
